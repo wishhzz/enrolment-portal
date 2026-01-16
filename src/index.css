@@ -1,13 +1,349 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --rp-green: #006633;
+  --rp-light-green: #e6f2ec;
+  --dark-grey: #333;
+  --light-grey: #f4f4f4;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light-grey);
+  color: var(--dark-grey);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+header {
+  background-color: var(--rp-green);
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.list-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.list-item {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--rp-green);
+  border: 1px solid #ddd;
+  transition: 0.3s;
+}
+
+.list-item:hover {
+  background: var(--rp-light-green);
+  transform: translateX(5px);
+}
+
+form {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, select, textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+button {
+  background-color: var(--rp-green);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #004d26;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.banner-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.banner-image {
+  width: 70%; 
+  height: auto;
+  border-radius: 15px; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);  
+  display: block;
+}
+
+.hero-text {
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  line-height: 1.6;
+}
+
+.cta-button {
+  background-color: #ffffff;
+  color: #007a33; 
+  border: 2px solid #007a33;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #007a33;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 122, 51, 0.3);
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+  .header-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.diplomas-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.diplomas-header h1 {
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.diploma-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.diploma-card {
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.diploma-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-color: #007a33; 
+}
+
+.card-content h3 {
+  margin: 0;
+  color: #007a33;
+  font-size: 1.4rem;
+}
+
+.view-link {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.outlet-container {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 30px;
+  margin-top: 20px;
+}
+
+.diploma-detail-container {
+  margin-top: 40px;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.section-title {
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  border-left: 5px solid #007a33; 
+  padding-left: 15px;
+}
+
+.module-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 40px; 
+}
+
+.module-item-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  text-decoration: none;
+  color: #555;
+  background: #fdfdfd;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.module-item-link:hover {
+  background-color: #f0fdf4;
+  color: #007a33;
+  transform: translateX(5px);
+}
+
+.module-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #007a33;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.module-description-outlet {
+  border-top: 1px dashed #ccc;
+  padding-top: 20px;
+  margin-top: 30px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Form Container Styling */
+.registration-form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-top: 5px solid #007a33; /* RP Green Accent */
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.form-group input, 
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+  outline: none;
+  border-color: #007a33;
+}
+
+/* Submit Button Styling */
+.submit-button {
+  width: 100%;
+  background-color: #007a33;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #005a26;
+}
+
+/* Confirmation Card */
+.confirmation-card {
+  padding: 50px;
+  background: #f0fdf4;
+  border: 1px solid #c6f6d5;
+  border-radius: 15px;
+  text-align: center;
 }
